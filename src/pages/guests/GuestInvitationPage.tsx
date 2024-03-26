@@ -18,15 +18,6 @@ const RootStyle = styled('div')(({ theme }) => ({
 
 export default function GuestInvitationPage() {
   return (
-    <Page title="Convite">
-      <RootStyle>
         <GuestHero />
-        {/*<GuestWhat />
-        <AboutVision />
-        <Divider orientation="vertical" sx={{ my: 10, mx: 'auto', width: 2, height: 40 }} />
-        <AboutTeam />
-        <AboutTestimonials /> */}
-      </RootStyle>
-    </Page>
   );
 }

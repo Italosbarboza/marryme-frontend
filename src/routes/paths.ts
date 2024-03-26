@@ -37,6 +37,7 @@ export const PATH_PAGE = {
 
 export const PATH_GUEST = {
   root: ROOTS_GUEST,
+  shop: '/shop', // /${id}
   general: {
     invite: path(ROOTS_GUEST, '/invite'), // /${id}
     shop: path(ROOTS_GUEST, '/shop'), // /${id}

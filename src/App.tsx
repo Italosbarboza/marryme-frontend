@@ -2,6 +2,7 @@
 import Router from './routes';
 // theme
 import ThemeProvider from './theme';
+
 // components
 import ThemeSettings from './components/settings';
 import { ChartStyle } from './components/chart';
@@ -13,6 +14,7 @@ import MotionLazyContainer from './components/animate/MotionLazyContainer';
 // ----------------------------------------------------------------------
 
 export default function App() {
+
   return (
     <MotionLazyContainer>
       <ThemeProvider>

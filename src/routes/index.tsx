@@ -16,6 +16,7 @@ import { PATH_AFTER_LOGIN } from '../config';
 import GuestLayout from 'src/layouts/guests';
 
 import LoadingScreen from '../components/LoadingScreen';
+import PixPayment from 'src/sections/guest/shop/PixPayment';
 
 // ----------------------------------------------------------------------
 
@@ -162,7 +163,7 @@ export default function Router() {
         { path: '*', element: <Navigate to="/404" replace /> },
       ],
     },
-    {
+    /*{
       path: '/',
       element: <MainLayout />,
       children: [
@@ -171,13 +172,14 @@ export default function Router() {
         { path: 'contact-us', element: <Contact /> },
         { path: 'faqs', element: <Faqs /> },
       ],
-    },
+    },*/
     {
-      path: 'guest',
+      path: '/',
       element: <GuestLayout />,
       children: [
         { element: <GuestInvitation />, index: true },
         { path: 'shop', element: <GuestShop /> },
+        { path: 'payment/pix', element: <PixPayment /> },
         { path: 'product/:name', element: <GuestProductDetails /> },
         { path: 'checkout', element: <GuestCheckout /> },
         { path: 'thanks', element: <GuestThanks /> },

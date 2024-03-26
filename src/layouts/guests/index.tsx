@@ -17,34 +17,9 @@ export default function GuestLayout() {
 
   return (
     <Stack sx={{ minHeight: 1 }}>
-      <GuestHeader />
-
       <Outlet />
 
       <Box sx={{ flexGrow: 1 }} />
-
-      {!isHome ? (
-        <MainFooter />
-      ) : (
-        <Box
-          sx={{
-            py: 5,
-            textAlign: 'center',
-            position: 'relative',
-            bgcolor: 'background.default',
-          }}
-        >
-          <Container>
-            <Logo sx={{ mb: 1, mx: 'auto' }} />
-
-            <Typography variant="caption" component="p">
-              © Todos os direitos reservados
-              <br /> desenvolvido por &nbsp;
-              <Link href="https://minimals.cc/">Marry Me</Link>
-            </Typography>
-          </Container>
-        </Box>
-      )}
     </Stack>
   );
 }

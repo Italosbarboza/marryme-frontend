@@ -1,0 +1,162 @@
+{
+    "id": "e99f09a7-dd88-49d5-b1c8-1daf80c2d7b1",
+    "cover": "https://minimal-assets-api-dev.vercel.app/assets/images/products/product_1.jpg",
+    "images": [
+        "https://minimal-assets-api-dev.vercel.app/assets/images/products/product_1.jpg",
+        "https://minimal-assets-api-dev.vercel.app/assets/images/products/product_2.jpg",
+        "https://minimal-assets-api-dev.vercel.app/assets/images/products/product_3.jpg",
+        "https://minimal-assets-api-dev.vercel.app/assets/images/products/product_4.jpg",
+        "https://minimal-assets-api-dev.vercel.app/assets/images/products/product_5.jpg",
+        "https://minimal-assets-api-dev.vercel.app/assets/images/products/product_6.jpg",
+        "https://minimal-assets-api-dev.vercel.app/assets/images/products/product_7.jpg",
+        "https://minimal-assets-api-dev.vercel.app/assets/images/products/product_8.jpg"
+    ],
+    "name": "Nike Air Force 1 NDESTRUKT",
+    "code": "38BEE270",
+    "sku": "WW75K5210YW/SV",
+    "tags": [
+        "Dangal",
+        "The Sting",
+        "2001: A Space Odyssey",
+        "Singin' in the Rain"
+    ],
+    "price": 16.19,
+    "priceSale": 16.19,
+    "totalRating": 2.5,
+    "totalReview": 296,
+    "ratings": [
+        {
+            "name": "1 Star",
+            "starCount": 6020,
+            "reviewCount": 7738
+        },
+        {
+            "name": "2 Star",
+            "starCount": 4194,
+            "reviewCount": 2944
+        },
+        {
+            "name": "3 Star",
+            "starCount": 4859,
+            "reviewCount": 2711
+        },
+        {
+            "name": "4 Star",
+            "starCount": 1531,
+            "reviewCount": 8123
+        },
+        {
+            "name": "5 Star",
+            "starCount": 2394,
+            "reviewCount": 6977
+        }
+    ],
+    "reviews": [
+        {
+            "id": "e99f09a7-dd88-49d5-b1c8-1daf80c2d7b1",
+            "name": "Jayvion Simon",
+            "avatarUrl": "https://minimal-assets-api-dev.vercel.app/assets/images/avatars/avatar_1.jpg",
+            "comment": "Assumenda nam repudiandae rerum fugiat vel maxime.",
+            "rating": 2.5,
+            "isPurchased": true,
+            "helpful": 6017,
+            "postedAt": "2024-03-11T18:16:34.996Z"
+        },
+        {
+            "id": "e99f09a7-dd88-49d5-b1c8-1daf80c2d7b2",
+            "name": "Lucian Obrien",
+            "avatarUrl": "https://minimal-assets-api-dev.vercel.app/assets/images/avatars/avatar_2.jpg",
+            "comment": "Quis veniam aut saepe aliquid nulla.",
+            "rating": 2,
+            "isPurchased": true,
+            "helpful": 7614,
+            "postedAt": "2024-03-10T17:16:34.996Z"
+        },
+        {
+            "id": "e99f09a7-dd88-49d5-b1c8-1daf80c2d7b3",
+            "name": "Deja Brady",
+            "avatarUrl": "https://minimal-assets-api-dev.vercel.app/assets/images/avatars/avatar_3.jpg",
+            "comment": "Reprehenderit ut voluptas sapiente ratione nostrum est.",
+            "rating": 4.9,
+            "isPurchased": true,
+            "helpful": 7523,
+            "postedAt": "2024-03-09T16:16:35.006Z"
+        },
+        {
+            "id": "e99f09a7-dd88-49d5-b1c8-1daf80c2d7b4",
+            "name": "Harrison Stein",
+            "avatarUrl": "https://minimal-assets-api-dev.vercel.app/assets/images/avatars/avatar_4.jpg",
+            "comment": "Error ut sit vel molestias velit.",
+            "rating": 2,
+            "isPurchased": false,
+            "helpful": 1917,
+            "postedAt": "2024-03-08T15:16:35.006Z"
+        },
+        {
+            "id": "e99f09a7-dd88-49d5-b1c8-1daf80c2d7b5",
+            "name": "Reece Chung",
+            "avatarUrl": "https://minimal-assets-api-dev.vercel.app/assets/images/avatars/avatar_5.jpg",
+            "comment": "Quo quia sit nihil nemo doloremque et.",
+            "rating": 4,
+            "isPurchased": false,
+            "helpful": 2923,
+            "postedAt": "2024-03-07T14:16:35.007Z"
+        },
+        {
+            "id": "e99f09a7-dd88-49d5-b1c8-1daf80c2d7b6",
+            "name": "Lainey Davidson",
+            "avatarUrl": "https://minimal-assets-api-dev.vercel.app/assets/images/avatars/avatar_6.jpg",
+            "comment": "Autem doloribus harum vero laborum.",
+            "rating": 5,
+            "isPurchased": true,
+            "helpful": 6274,
+            "postedAt": "2024-03-06T13:16:35.007Z"
+        },
+        {
+            "id": "e99f09a7-dd88-49d5-b1c8-1daf80c2d7b7",
+            "name": "Cristopher Cardenas",
+            "avatarUrl": "https://minimal-assets-api-dev.vercel.app/assets/images/avatars/avatar_7.jpg",
+            "comment": "Tempora officiis consequuntur architecto nostrum autem nam adipisci.",
+            "rating": 4.9,
+            "isPurchased": false,
+            "helpful": 1591,
+            "postedAt": "2024-03-05T12:16:35.007Z"
+        },
+        {
+            "id": "e99f09a7-dd88-49d5-b1c8-1daf80c2d7b8",
+            "name": "Melanie Noble",
+            "avatarUrl": "https://minimal-assets-api-dev.vercel.app/assets/images/avatars/avatar_8.jpg",
+            "comment": "Voluptas sunt magni adipisci praesentium saepe.",
+            "rating": 5,
+            "isPurchased": false,
+            "helpful": 1126,
+            "postedAt": "2024-03-04T11:16:35.007Z"
+        }
+    ],
+    "status": "sale",
+    "inventoryType": "out_of_stock",
+    "sizes": [
+        "6",
+        "7",
+        "8",
+        "8.5",
+        "9",
+        "9.5",
+        "10",
+        "10.5",
+        "11",
+        "11.5",
+        "12",
+        "13"
+    ],
+    "available": 50,
+    "description": "\n<p><strong><small> SPECIFICATION</small></strong></p>\n<p>Leather panels. Laces. Rounded toe. Rubber sole.\n<br /><br />\n<p><strong><small> MATERIAL AND WASHING INSTRUCTIONS</small></strong></p>\n<p>Shoeupper: 54% bovine leather,46% polyurethane. Lining: 65% polyester,35% cotton. Insole: 100% polyurethane. Sole: 100% thermoplastic. Fixing sole: 100% glued.</p>\n",
+    "sold": 901,
+    "createdAt": "2024-03-11T18:16:35.007Z",
+    "category": "Apparel",
+    "gender": "Women",
+    "colors": [
+        "#00AB55",
+        "#000000"
+    ]
+},

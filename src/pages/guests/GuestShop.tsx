@@ -116,18 +116,6 @@ export default function GuestShop() {
     <Page title="Vitrine de Sonhos">
       <RootStyle>
         <Container maxWidth={themeStretch ? false : 'lg'}>
-          {/* <HeaderBreadcrumbs
-          heading="Vitrine de Sonhos"
-          links={[
-            { name: 'Dashboard', href: PATH_DASHBOARD.root },
-            {
-              name: 'E-Commerce',
-              href: PATH_DASHBOARD.eCommerce.root,
-            },
-            { name: 'Shop' },
-          ]}
-        /> */}
-
           <Stack
             spacing={2}
             direction={{ xs: 'column', sm: 'row' }}
@@ -173,8 +161,8 @@ export default function GuestShop() {
             )}
           </Stack>
 
-          <ShopProductList products={filteredProducts} loading={!products.length && isDefault} />
-          <GuestCartWidget />
+         <ShopProductList products={filteredProducts} loading={!products.length && isDefault} />
+         <GuestCartWidget />
         </Container>
       </RootStyle>
     </Page>
