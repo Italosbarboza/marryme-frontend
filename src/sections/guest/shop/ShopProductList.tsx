@@ -7,7 +7,11 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/material';
 import axios from 'axios';
-import { DonateModal } from './ModalPayment'; // Certifique-se de que o caminho está correto
+import { ModalPayment } from './ModalPayment'; 
+import GuestHeader from 'src/layouts/guests/GuestHeader';
+import { Container } from '@mui/material';
+import Logo from 'src/components/Logo';
+import { useTheme } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
 
@@ -17,7 +21,19 @@ type Props = {
 };
 
 export default function ShopProductList({ products, loading }: Props) {
-  const [productsOptions, setProductsOptions] = useState<Array<{id: number, name: string, description: string, images: string[]}>>([]);
+
+  const theme = useTheme();
+
+const priceStyle = {
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  backgroundColor: theme.palette.primary.main + 'A0', // Aplicando a cor primária com opacidade
+  color: theme.palette.primary.contrastText,
+  padding: '2px 8px',
+};
+
+  const [productsOptions, setProductsOptions] = useState<Array<{id: number, name: string, description: string, images: string[], price: number}>>([]);
   const [selectedProduct, setSelectedProduct] = useState<{id: number, name: string, description: string, images: string[]} | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -46,6 +62,7 @@ export default function ShopProductList({ products, loading }: Props) {
 
   return (
     <>
+      <GuestHeader />
       <Box
         sx={{
           display: 'grid',
@@ -60,13 +77,22 @@ export default function ShopProductList({ products, loading }: Props) {
       >
         {productsOptions.map((product) => (
           <Card key={product.id} sx={{ display: 'flex', flexDirection: 'column', maxWidth: 345, height: '100%' }}>
-          <CardMedia
-              sx={{ height: 140 }}
-              image={`https://marryme-now.s3.amazonaws.com/${product.images[0]}`}
-              title={product.name}
-            />
+            <Box sx={{ position: 'relative' }}>
+              <CardMedia
+                sx={{ height: 140 }}
+                image={`https://marryme-now.s3.amazonaws.com/${product.images[0]}`}
+                title={product.name}
+              />
+              <Box
+                sx={priceStyle}
+              >
+                {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}              
+              </Box>
+            </Box>
             <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
+              <Typography 
+                gutterBottom variant="h5" 
+                component="div">
                 {product.name}
               </Typography>
               <Typography variant="body2" color="text.secondary" dangerouslySetInnerHTML={{ __html: product.description }}>
@@ -74,13 +100,29 @@ export default function ShopProductList({ products, loading }: Props) {
             </CardContent>
             <CardActions sx={{ marginTop: 'auto', justifyContent: 'flex-end' }}>
 
-              <Button size="small">Detalhes</Button>
-              <Button size="small" onClick={() => handleOpenModal(product)}>Doar</Button>
+              <Button size="small" onClick={() => handleOpenModal(product)}>Presentear</Button>
             </CardActions>
           </Card>
         ))}
       </Box>
-      <DonateModal open={isModalOpen} onClose={handleCloseModal} product={selectedProduct} />
+      <ModalPayment open={isModalOpen} onClose={handleCloseModal} product={selectedProduct} />
+        <Box
+          sx={{
+            py: 5,
+            textAlign: 'center',
+            position: 'relative',
+            bgcolor: 'background.default',
+          }}
+        >
+          <Container>
+            <Logo sx={{ mb: 1, mx: 'auto' }} />
+
+            <Typography variant="caption" component="p">
+              © Todos os direitos reservados
+              <br /> desenvolvido por Italo Barboza
+            </Typography>
+          </Container>
+        </Box>
     </>
   );
 }

@@ -1,11 +1,7 @@
 import { Outlet } from 'react-router-dom';
 // @mui
-import { Box, Container, Link, Stack, Typography } from '@mui/material';
-// components
-import Logo from '../../components/Logo';
-//
-import GuestHeader from './GuestHeader';
-import MainFooter from './MainFooter';
+import { Box, Stack } from '@mui/material';
+
 
 // ----------------------------------------------------------------------
 
@@ -18,7 +14,6 @@ export default function GuestLayout() {
   return (
     <Stack sx={{ minHeight: 1 }}>
       <Outlet />
-
       <Box sx={{ flexGrow: 1 }} />
     </Stack>
   );

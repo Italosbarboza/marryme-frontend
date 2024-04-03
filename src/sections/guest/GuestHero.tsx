@@ -1,17 +1,56 @@
+import { CSSProperties, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function GuestHero() {
+   const [isScrolled, setIsScrolled] = useState(false);
+
+   useEffect(() => {
+      function handleScroll() {
+         const scrollPosition = window.scrollY;
+         const imageHeight = document.getElementById('main-image')?.offsetHeight || 0;
+         setIsScrolled(scrollPosition > imageHeight);
+      }
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+         window.removeEventListener('scroll', handleScroll);
+      };
+   }, []);
+
+   const fullBgStyle = {
+      background: 'url(../images/banner2.jpg)',
+      backgroundSize: '100% 100%',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+  };
+
+  const headerStyle: CSSProperties = {
+      width: '100%',
+      height: '90px',
+      padding: '29px 20px',
+      position: 'fixed',
+      zIndex: '99999999999',
+      top: '0',
+      
+      background: isScrolled ? '#f0f0f0' : 'transparent'
+   };
+
+   const containerStyle = {
+      maxWidth: '1170px'
+  };
+
   return (
     <body className="main-layout">
-      <header className="full_bg">
-         <div className="header">
-            <div className="container">
+      <header style={fullBgStyle}>
+         <div style={headerStyle}>
+            <div style={containerStyle} className="container">
                <div className="row">
                   <div className="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                      <div className="full">
                         <div className="center-desk">
                            <div className="logo">
-                              <a href="index.html">Italo&Luiza</a>
+                              <a href="index.html">Luiza&Italo</a>
                            </div>
                         </div>
                      </div>
@@ -23,7 +62,7 @@ export default function GuestHero() {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarsExample04">
                            <ul className="navbar-nav mr-auto">
-                              <li className="nav-item active">
+                              <li className="nav-item">
                                  <a className="nav-link" href="index.html">Home</a>
                               </li>
                               <li className="nav-item">
@@ -39,7 +78,7 @@ export default function GuestHero() {
                                   onMouseEnter={(e) => (e.currentTarget.style.background = '#e0e0e0')}
                                   onMouseLeave={(e) => (e.currentTarget.style.background = '#f0f0f0')}
                                 > 
-                                 <a className="nav-link" href="blog.html">Lista de Presentes</a>
+                                 <a className="nav-link" href="#">Lista de Presentes</a>
                                 </Link>
                               </li>
                               <li className="nav-item">
@@ -134,7 +173,7 @@ export default function GuestHero() {
          </section>
       </header>
       <div className="plane">
-         <div className="container">
+         <div id="main-image" className="container">
             <div className="row">
                <div className="col-sm-12">
                   <div className="titlepage">
@@ -376,7 +415,7 @@ export default function GuestHero() {
                   <div className="ru_bg">
                      <div className="row">
                         <div className="col-md-3">
-                          <a href="#"> <h1>Italo&Luiza</h1></a>
+                          <a href="#"> <h1>Luiza&Italo</h1></a>
                         </div>
                         <div className="col-md-9">
                            <ul className="lacation">

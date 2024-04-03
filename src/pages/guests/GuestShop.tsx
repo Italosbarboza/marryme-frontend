@@ -162,7 +162,6 @@ export default function GuestShop() {
           </Stack>
 
          <ShopProductList products={filteredProducts} loading={!products.length && isDefault} />
-         <GuestCartWidget />
         </Container>
       </RootStyle>
     </Page>
