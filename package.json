@@ -37,6 +37,7 @@
     ]
   },
   "dependencies": {
+    "12": "^1.0.2",
     "@auth0/auth0-spa-js": "^1.21.0",
     "@emotion/cache": "^11.7.1",
     "@emotion/react": "^11.9.0",

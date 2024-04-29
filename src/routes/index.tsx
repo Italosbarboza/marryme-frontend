@@ -177,7 +177,7 @@ export default function Router() {
       path: '/',
       element: <GuestLayout />,
       children: [
-        { element: <GuestInvitation />, index: true },
+        { element: <GuestShop />, index: true },
         { path: 'shop', element: <GuestShop /> },
         { path: 'payment/pix', element: <PixPayment /> },
         { path: 'product/:name', element: <GuestProductDetails /> },
