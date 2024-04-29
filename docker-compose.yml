@@ -1,0 +1,13 @@
+version: '3.0'
+
+services:
+  react-template:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    volumes:
+      - .:/app
+    environment:
+      - CHOKIDAR_USEPOLLING=true
