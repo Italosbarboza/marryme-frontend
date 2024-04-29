@@ -22,7 +22,7 @@ type Props = {
 export default function ShopProductCard({ product }: Props) {
   const { name, cover, price, colors, status, priceSale } = product;
 
-  const linkTo = PATH_GUEST.general.productView(paramCase(name));
+  const linkTo = PATH_GUEST.general.productView(paramCase('zzz'));
 
   return (
     <Card>
