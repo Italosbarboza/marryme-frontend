@@ -40,7 +40,7 @@ const priceStyle = {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:3333/products');
+        const response = await axios.get('https://api.listaperfeita.com/products');
         setProductsOptions(response.data);
       } catch (error) {
         console.error('Erro ao buscar categorias:', error);

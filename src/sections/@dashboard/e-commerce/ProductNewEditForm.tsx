@@ -104,7 +104,7 @@ export default function ProductNewEditForm({ isEdit, currentProduct }: Props) {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:3333/categories');
+        const response = await axios.get('https://api.listaperfeita.com/categories');
         
         // Filtra as categorias com isPadrao true ou userId igual a 1
         const filteredCategories = response.data.filter((category: { isPadrao: any; userId: number; }) => category.isPadrao || category.userId === 1);
@@ -149,7 +149,7 @@ export default function ProductNewEditForm({ isEdit, currentProduct }: Props) {
 
 
 
-    const images = await axios.post('http://localhost:3000/files/multiple', formData, config);
+    const images = await axios.post('https://upload.listaperfeita.com/files/multiple', formData, config);
 
     const response = {
       name: data.name,
@@ -166,7 +166,7 @@ export default function ProductNewEditForm({ isEdit, currentProduct }: Props) {
     console.log('--------------------------------------------')
     console.log(response)
 
-    await axios.post('http://localhost:3333/products', response);
+    await axios.post('https://api.listaperfeita.com/products', response);
 
     
       reset();

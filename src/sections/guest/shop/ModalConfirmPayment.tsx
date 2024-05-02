@@ -62,7 +62,7 @@ const navigate = useNavigate();
     try {
       console.log("ueeeen")
       // Realize a solicitação POST com axios
-      await axios.post('http://localhost:3333/guest-guifts', Object.assign(data, {product_id: product?.id || 1}));
+      await axios.post('https://api.listaperfeita.com/guest-guifts', Object.assign(data, {product_id: product?.id || 1}));
       console.log("Presente confirmado com sucesso:", data);
       navigate('/?reload=true', {});
       onClose();
