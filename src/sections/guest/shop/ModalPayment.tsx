@@ -19,6 +19,15 @@ const style = {
   bgcolor: 'background.paper',
   boxShadow: 24,
   p: 4,
+  '@media (max-width: 620px)': {
+    width: 500, 
+  },
+  '@media (max-width: 520px)': {
+    width: 400, 
+  },
+  '@media (max-width: 450px)': {
+    width: 340, 
+  },
 };
 
 const pixStyle: CSSProperties = {

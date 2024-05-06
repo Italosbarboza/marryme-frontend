@@ -33,6 +33,12 @@ const priceStyle = {
   padding: '2px 8px',
 };
 
+const cardMediaStyle = {
+  height: 142,
+  maxWidth: '250px',
+  backgroundSize: 'calc(100% - 100px) auto'
+}
+
   const [productsOptions, setProductsOptions] = useState<Array<{id: number, name: string, description: string, images: string[], price: number}>>([]);
   const [selectedProduct, setSelectedProduct] = useState<{id: number, name: string, description: string, images: string[]} | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -79,7 +85,7 @@ const priceStyle = {
           <Card key={product.id} sx={{ display: 'flex', flexDirection: 'column', maxWidth: 345, height: '100%' }}>
             <Box sx={{ position: 'relative' }}>
               <CardMedia
-                sx={{ height: 140 }}
+                sx={cardMediaStyle}
                 image={`https://marryme-now.s3.amazonaws.com/${product.images[0]}`}
                 title={product.name}
               />
