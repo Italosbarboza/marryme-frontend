@@ -23,6 +23,15 @@ const style = {
   bgcolor: 'background.paper',
   boxShadow: 24,
   p: 4,
+  '@media (max-width: 620px)': {
+    width: 500, 
+  },
+  '@media (max-width: 520px)': {
+    width: 400, 
+  },
+  '@media (max-width: 450px)': {
+    width: 340, 
+  },
 };
 
 const LabelStyle = styled(Typography)(({ theme }) => ({
@@ -31,7 +40,6 @@ const LabelStyle = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(1),
   marginTop: theme.spacing(2), // Adiciona margem superior
 }));
-
 
 type FormValuesProps = {
   guest_name: string;
@@ -45,7 +53,7 @@ type DonateModalProps = {
 
 export function ModalConfirmPayment({ open, onClose, product }: DonateModalProps) {
 
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const validationSchema = Yup.object().shape({
     guest_name: Yup.string().required('O nome é obrigatório')
@@ -62,9 +70,8 @@ const navigate = useNavigate();
     try {
       console.log("ueeeen")
       // Realize a solicitação POST com axios
-      await axios.post('https://api.listaperfeita.com/guest-guifts', Object.assign(data, {product_id: product?.id || 1}));
+      /// await axios.post('https://api.listaperfeita.com/guest-guifts', Object.assign(data, {product_id: product?.id || 1}));
       console.log("Presente confirmado com sucesso:", data);
-      navigate('/?reload=true', {});
       onClose();
     } catch (error) {
       console.error("Erro ao confirmar o presente:", error);
@@ -83,7 +90,12 @@ const navigate = useNavigate();
     >
       <Box sx={style} component="form" onSubmit={methods.handleSubmit(onSubmit)}>
         <FormProvider {...methods}>
-          <RHFTextField name="guest_name" label="Nome do Convidado" />
+          <RHFTextField 
+            name="guest_name2" 
+            label="Nome do Convidado."
+            fullWidth
+            margin="normal"
+          />
           <LabelStyle>Deixe uma mensagem para os noivos 🧡</LabelStyle>
           <RHFEditor simple name="message" />
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2 }}>

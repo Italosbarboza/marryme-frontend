@@ -87,7 +87,7 @@ export default function Editor({
           onChange={onChange}
           modules={modules}
           formats={formats}
-          placeholder="Escreva uma breve descrição sobre o presente..."
+          placeholder="Escreva uma mensagem aos noivos..."
           {...other}
         />
       </RootStyle>

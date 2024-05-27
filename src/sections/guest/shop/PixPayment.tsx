@@ -1,16 +1,15 @@
 import axios from 'axios';
 import { styled } from '@mui/material/styles';
-import { Box, Container, Button, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import Page from 'src/components/Page';
 import useSettings from 'src/hooks/useSettings';
-import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
+import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import GuestHeader from 'src/layouts/guests/GuestHeader';
 import { ModalConfirmPayment } from './ModalConfirmPayment'; 
 
 import Logo from 'src/components/Logo';
-
 
 export default function GuestShop() {
   const { themeStretch } = useSettings();
@@ -20,8 +19,7 @@ export default function GuestShop() {
 
   const [productsOptions, setProductsOptions] = useState<Array<{id: number, name: string, description: string, images: string[], price: number}>>([]);
   const [selectedProduct, setSelectedProduct] = useState<{id: number, name: string, description: string, images: string[]} | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [isModalOpen, setIsModalOpen] = useState(true); // Open modal on component mount
 
   const [idPreferense, setIdPreferense] = useState('2');
 
@@ -116,6 +114,12 @@ export default function GuestShop() {
     createPreference();
   }, []);
 
+  useEffect(() => {
+    if (product) {
+      handleOpenModal(product);
+    }
+  }, [product]);
+
   const handleOpenModal = (product: {id: number, name: string, description: string, images: string[]}) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
@@ -169,4 +173,5 @@ export default function GuestShop() {
         </Box>
         <ModalConfirmPayment open={isModalOpen} onClose={handleCloseModal} product={selectedProduct} />
     </Page>
-)}
+  );
+}

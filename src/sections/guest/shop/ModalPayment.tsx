@@ -112,7 +112,7 @@ export function ModalPayment({ open, onClose, product }: DonateModalProps) {
                         height={'40px'}/>
                 <div style={pixTitle}>
                     <Typography variant="h6">Comprar na Amazon</Typography>
-                    <Typography variant="body1" >Compre o produto na lista de presentes da Amazon</Typography>
+                    <Typography variant="body1" >Compre, caso exista, na lista de presentes da Amazon</Typography>
                 </div>
             </a>
         </Typography>
