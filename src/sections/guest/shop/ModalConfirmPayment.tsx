@@ -24,13 +24,13 @@ const style = {
   boxShadow: 24,
   p: 4,
   '@media (max-width: 620px)': {
-    width: 500, 
+    width: 500,
   },
   '@media (max-width: 520px)': {
-    width: 400, 
+    width: 400,
   },
   '@media (max-width: 450px)': {
-    width: 340, 
+    width: 340,
   },
 };
 
@@ -43,6 +43,7 @@ const LabelStyle = styled(Typography)(({ theme }) => ({
 
 type FormValuesProps = {
   guest_name: string;
+  message: string;
 };
 
 type DonateModalProps = {
@@ -52,25 +53,26 @@ type DonateModalProps = {
 };
 
 export function ModalConfirmPayment({ open, onClose, product }: DonateModalProps) {
-
   const navigate = useNavigate();
 
   const validationSchema = Yup.object().shape({
-    guest_name: Yup.string().required('O nome é obrigatório')
+    guest_name: Yup.string().required('O nome é obrigatório'),
+    message: Yup.string().required('A mensagem é obrigatória'),
   });
 
   const methods = useForm<FormValuesProps>({
     resolver: yupResolver(validationSchema),
     defaultValues: {
-      guest_name: ''
+      guest_name: '',
+      message: '',
     },
   });
 
   const onSubmit = async (data: FormValuesProps) => {
     try {
-      console.log("ueeeen")
+      console.log("Dados enviados:", Object.assign(data, {product_id: product?.id || 1}));
       // Realize a solicitação POST com axios
-      /// await axios.post('https://api.listaperfeita.com/guest-guifts', Object.assign(data, {product_id: product?.id || 1}));
+      await axios.post('https://api.listaperfeita.com/guest-guifts', Object.assign(data, {product_id: product?.id || 1}));
       console.log("Presente confirmado com sucesso:", data);
       onClose();
     } catch (error) {
@@ -91,7 +93,7 @@ export function ModalConfirmPayment({ open, onClose, product }: DonateModalProps
       <Box sx={style} component="form" onSubmit={methods.handleSubmit(onSubmit)}>
         <FormProvider {...methods}>
           <RHFTextField 
-            name="guest_name2" 
+            name="guest_name" 
             label="Nome do Convidado."
             fullWidth
             margin="normal"
@@ -107,7 +109,7 @@ export function ModalConfirmPayment({ open, onClose, product }: DonateModalProps
               Fechar
             </Button>
             <Button type="submit">
-              Confirmar Presente
+              Enviar
             </Button>
           </Box>
         </FormProvider>

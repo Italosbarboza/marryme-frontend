@@ -143,7 +143,7 @@ export default function GuestShop() {
             <StyledLi><NumberMarker>1.</NumberMarker> Acesse a opção Pix no seu Internet Banking ou app de pagamentos;</StyledLi>
             <StyledLi><NumberMarker>2.</NumberMarker> Escaneie o Qr Code a seguir ou copie o código de pagamento;</StyledLi>
             <StyledLi><NumberMarker>3.</NumberMarker> <Marker>Selecione o valor</Marker> do produto e realize o pagamento;</StyledLi>
-            <StyledLi><NumberMarker>4.</NumberMarker> Clique em <Marker><StyledA onClick={() => handleOpenModal(product)}>Confirmar pagamento</StyledA></Marker></StyledLi>
+            <StyledLi><NumberMarker>4.</NumberMarker> Caso não tenha escrito <Marker><StyledA onClick={() => handleOpenModal(product)}>Deixe sua mensagem aos noivos</StyledA></Marker></StyledLi>
           </StyledUl>
           <FlexQrcode>
             <img src='https://marryme-now.s3.amazonaws.com/qrcode.png' width={150} height={150} alt='Código de barras'></img>
