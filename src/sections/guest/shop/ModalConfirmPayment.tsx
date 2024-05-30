@@ -38,7 +38,7 @@ const LabelStyle = styled(Typography)(({ theme }) => ({
   ...theme.typography.subtitle2,
   color: theme.palette.text.secondary,
   marginBottom: theme.spacing(1),
-  marginTop: theme.spacing(2), // Adiciona margem superior
+  marginTop: theme.spacing(2),
 }));
 
 type FormValuesProps = {
@@ -56,8 +56,7 @@ export function ModalConfirmPayment({ open, onClose, product }: DonateModalProps
   const navigate = useNavigate();
 
   const validationSchema = Yup.object().shape({
-    guest_name: Yup.string().required('O nome é obrigatório'),
-    message: Yup.string().required('A mensagem é obrigatória'),
+    guest_name: Yup.string().required('O nome é obrigatório')
   });
 
   const methods = useForm<FormValuesProps>({

@@ -101,7 +101,7 @@ export default function ShopProductList({ products, loading }: Props) {
                 onClick={() => handleOpenModal(product)} 
                 disabled={!product.isAvailable}
               >
-                {product.isAvailable ? 'Presentear' : 'Presente dado'}
+                {product.isAvailable ? 'Presentear' : 'Presenteado'}
               </Button>
             </CardActions>
           </Card>

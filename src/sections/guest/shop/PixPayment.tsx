@@ -94,7 +94,7 @@ export default function GuestShop() {
           title: product.name,
           quantity: 1,
           currency_id: 'BRL',
-          unit_price: product.price
+          unit_price: product.price * 1.0498
         }
       ],
     }, 
